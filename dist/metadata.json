@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schemas.premid.app/metadata/1.0",
+    "author": {
+      "name": "FruityEnLoops",
+      "id": "146323264409567232"
+    },
+    "url": "idlescape.com",
+    "description": {
+      "en": "Idlescape is an idle browser MMORPG in which you level up your skills, gather resources and trade with other players around the world."
+    },
+    "service": "Idlescape",
+    "version": "1.0.0",
+    "logo": "https://idlescape.com/apple-touch-icon.png",
+    "thumbnail": "https://idlescape.com/favicon-32x32.png",
+    "color": "#FF0000",
+    "tags": ["game"],
+    "category": "games"
+  }
