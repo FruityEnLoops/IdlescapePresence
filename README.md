@@ -10,5 +10,4 @@
 
 ## TODO list
 
-- Add each activity with their icons and display the current player's level
-- Display the current user's name and if they're in ironman or not
+- Support mastery levels
