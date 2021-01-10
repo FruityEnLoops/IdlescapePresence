@@ -8,7 +8,7 @@ presence.on("UpdateData", async () => {
   const presenceData: PresenceData = {
     largeImageKey: "idlescape"
   };
-  var titleFormatted = document.title.substring(12);
+  var titleFormatted = document.getElementsByClassName("status-action")[0].textContent;
   presenceData.startTimestamp = browsingStamp;
   if (document.location.pathname == "/" || document.location.pathname == "/characters") {
     presenceData.details = "Choosing a character";
