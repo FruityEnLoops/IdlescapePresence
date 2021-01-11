@@ -1,18 +1,30 @@
 {
-    "$schema": "https://schemas.premid.app/metadata/1.0",
-    "author": {
-      "name": "FruityEnLoops",
-      "id": "146323264409567232"
-    },
-    "url": "idlescape.com",
-    "description": {
-      "en": "Idlescape is an idle browser MMORPG in which you level up your skills, gather resources and trade with other players around the world."
-    },
-    "service": "Idlescape",
-    "version": "1.0.1",
-    "logo": "https://idlescape.com/apple-touch-icon.png",
-    "thumbnail": "https://idlescape.com/favicon-32x32.png",
-    "color": "#FF0000",
-    "tags": ["game","runescape","idlescape","idlegame","idle"],
-    "category": "games"
-  }
+  "$schema": "https://schemas.premid.app/metadata/1.0",
+  "author": {
+    "name": "FruityEnLoops",
+    "id": "146323264409567232"
+  },
+  "contributors": [
+    {
+      "name": "Worminators",
+      "id": "170699922386059264"
+    }
+  ],
+  "url": "idlescape.com",
+  "description": {
+    "en": "Idlescape is an idle browser MMORPG in which you level up your skills, gather resources and trade with other players around the world."
+  },
+  "service": "Idlescape",
+  "version": "1.1.0",
+  "logo": "https://idlescape.com/apple-touch-icon.png",
+  "thumbnail": "https://idlescape.com/apple-touch-icon.png",
+  "color": "#FF0000",
+  "tags": [
+    "game",
+    "runescape",
+    "idlescape",
+    "idlegame",
+    "idle"
+  ],
+  "category": "games"
+}
