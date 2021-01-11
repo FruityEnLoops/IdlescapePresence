@@ -4,6 +4,12 @@ const presence = new Presence({
 
 var browsingStamp = Math.floor(Date.now() / 1000);
 
+function getLevel(index: number)
+{
+  let isMastery = document.getElementsByClassName("skill-level-bar-ni-exp-bar")[index].className.includes("mastery");
+  return document.getElementsByClassName("skill-level-bar-ni-exp-level")[index].textContent + (isMastery ? "M" : "");
+}
+
 presence.on("UpdateData", async () => {
   const presenceData: PresenceData = {
     largeImageKey: "idlescape"
@@ -15,53 +21,53 @@ presence.on("UpdateData", async () => {
   } else {
     presenceData.details = titleFormatted;
     if((<HTMLImageElement>document.getElementsByClassName("header-league-icon")[0]).src.startsWith("https://idlescape.com/images/leagues/ironman")) {
-      var league = "Ironman";
+      var league = "Ironman League";
     } else {
-      var league = "Normal";
+      var league = "Normal League";
     }
     presenceData.state = document.getElementsByClassName("navbar1-box left drawer-button noselect")[0].textContent.substring(2) + "in " + league;
 
     if(titleFormatted.startsWith("Mining")){
-      presenceData.smallImageText = "Mining level : " + document.getElementsByClassName("skill-level-bar-ni-exp-level")[0].textContent;
+      presenceData.smallImageText = "Mining level : " + getLevel(0);
       presenceData.smallImageKey = "mining";
     }
       else if(titleFormatted.startsWith("Foraging"))
     {
-      presenceData.smallImageText = "Foraging level : " + document.getElementsByClassName("skill-level-bar-ni-exp-level")[1].textContent;
+      presenceData.smallImageText = "Foraging level : " + getLevel(1);
       presenceData.smallImageKey = "foraging";
     }
       else if(titleFormatted.startsWith("Fishing"))
     {
-      presenceData.smallImageText = "Fishing level : " + document.getElementsByClassName("skill-level-bar-ni-exp-level")[2].textContent;
+      presenceData.smallImageText = "Fishing level : " + getLevel(2);
       presenceData.smallImageKey = "fishing";
     }
       else if(titleFormatted.startsWith("Smithing"))
     {
-      presenceData.smallImageText = "Smithing level : " + document.getElementsByClassName("skill-level-bar-ni-exp-level")[4].textContent;
+      presenceData.smallImageText = "Smithing level : " + getLevel(4);
       presenceData.smallImageKey = "smithing";
     }
       else if(titleFormatted.startsWith("Cooking"))
     {
-      presenceData.smallImageText = "Cooking level : " + document.getElementsByClassName("skill-level-bar-ni-exp-level")[5].textContent;
+      presenceData.smallImageText = "Cooking level : " + getLevel(5);
       presenceData.smallImageKey = "cooking";
-    }
+    } 
       else if(titleFormatted.startsWith("Runecrafting"))
     {
-      presenceData.smallImageText = "Runecrafting level : " + document.getElementsByClassName("skill-level-bar-ni-exp-level")[7].textContent;
+      presenceData.smallImageText = "Runecrafting level : " + getLevel(7);
       presenceData.smallImageKey = "runecrafting";
     }
       else if(titleFormatted.startsWith("Enchanting"))
     {
       presenceData.details = "Scrollcrafting";
-      presenceData.smallImageText = "Enchanting level : " + document.getElementsByClassName("skill-level-bar-ni-exp-level")[8].textContent;
+      presenceData.smallImageText = "Enchanting level : " + getLevel(8);
       presenceData.smallImageKey = "enchanting";
     }
       else if(titleFormatted.startsWith("Fighting"))
     {
-      presenceData.smallImageText = "HP:" + document.getElementsByClassName("skill-level-bar-ni-exp-level")[9].textContent +
-        ", ATK:" + document.getElementsByClassName("skill-level-bar-ni-exp-level")[10].textContent + 
-        ", STR:" + document.getElementsByClassName("skill-level-bar-ni-exp-level")[11].textContent + 
-        ", DEF:" + document.getElementsByClassName("skill-level-bar-ni-exp-level")[12].textContent;
+      presenceData.smallImageText = "HP:" + getLevel(9) +
+        ", ATK:" + getLevel(10) + 
+        ", STR:" + getLevel(11) + 
+        ", DEF:" + getLevel(12);
       presenceData.smallImageKey = "fighting";
     }
   }
