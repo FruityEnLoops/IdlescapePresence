@@ -3,6 +3,7 @@ const presence = new Presence({
 });
 
 var browsingStamp = Math.floor(Date.now() / 1000);
+var flag = "";
 
 function getLevel(index: number)
 {
@@ -15,7 +16,15 @@ presence.on("UpdateData", async () => {
     largeImageKey: "idlescape"
   };
   var titleFormatted = document.getElementsByClassName("status-action")[0].textContent;
+  
+  if(flag == ""){
+    flag = titleFormatted;
+  }
+  if(flag != titleFormatted){
+    browsingStamp = Math.floor(Date.now() / 1000);
+  }
   presenceData.startTimestamp = browsingStamp;
+
   if (document.location.pathname == "/" || document.location.pathname == "/characters") {
     presenceData.details = "Choosing a character";
   } else {
