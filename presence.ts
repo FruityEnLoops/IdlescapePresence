@@ -52,7 +52,7 @@ presence.on("UpdateData", async () => {
     }
       else if(titleFormatted.startsWith("Smithing"))
     {
-      presenceData.smallImageText = "Smithing level : " + getLevel(4);
+      presenceData.smallImageText = "Smithing level : " + getLevel(3);
       presenceData.smallImageKey = "smithing";
     }
       else if(titleFormatted.startsWith("Cooking"))
